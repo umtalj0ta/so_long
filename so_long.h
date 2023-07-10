@@ -2,10 +2,16 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+#define __STDC_LIMIT_MACROS
+#define __STDC_CONSTANT_MACROS
+
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+#include <limits.h>
 # include <fcntl.h>
+#include <string.h>
+#include <assert.h>
 
 # if defined(__APPLE__) && defined(__MACH__)
 #  include "mlx/mlx.h"
@@ -13,7 +19,7 @@
 #  include "mlx_linux/mlx.h"
 # endif
 
-# include "./libft/libft.h"
+//# include "./libft/libft.h"
 
 # define X_EVENT_KEY_PRESS		2
 # define X_EVENT_KEY_EXIT		17
@@ -44,7 +50,7 @@
 # define SPRITE_H				64
 # define SPRITE_W				64
 
-int map_is_delimited_by_walls(int** map, int width, int height);
+int map_is_delimited_by_walls(char **map, int width, int height);
 int map_is_rectangular(char** map, int height, int width);
 
 
