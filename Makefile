@@ -1,11 +1,12 @@
 
 NAME		=	so_long
 CC			=	cc
-SRCS		=	srcs/test.c \
+SRCS		=	srcs/main.c srcs/new_window.c srcs/close_and_destroy.c srcs/keypress.c srcs/map_check.c srcs/mapinit.c srcs/rendering.c  srcs/get_next_line.c srcs/get_next_line_aux.c
+
 				
 
 LIBFT		=	libft/libft.a
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -g 
 MLXFLAGS	=	-L ./mlx/ -lmlx -framework OpenGL -framework AppKit -lz
 RM			=	rm -f
 OBJS		=	$(SRCS:%.c=%.o)
@@ -25,6 +26,7 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 			make -C libft
 			cp $(LIBFT) libft.so
+			make -C mlx
 			$(CC) $(SRCS) $(LIBFT) $(MLXFLAGS) $(CFLAGS) -o $(NAME)
 			
 
