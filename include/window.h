@@ -1,4 +1,16 @@
- #ifndef WINDOW_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   window.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/29 14:01:45 by jgomes-v          #+#    #+#             */
+/*   Updated: 2023/08/29 14:07:38 by jgomes-v         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef WINDOW_H
 # define WINDOW_H
 
 typedef struct s_mlx
@@ -46,7 +58,6 @@ typedef struct s_data
 	unsigned int	i;
 	unsigned int	j;
 }				t_data;
-
 
 void	check_arguments(int argc, char **argv, t_data *data);
 void	ft_perror(char *str, t_data *data);
