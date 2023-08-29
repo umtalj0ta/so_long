@@ -1,20 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rendering.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/29 13:28:54 by jgomes-v          #+#    #+#             */
+/*   Updated: 2023/08/29 13:31:47 by jgomes-v         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/window.h"
 #include "../so_long.h"
 
 // use mlx_xpm_file_to_image() to render the textures
 void	ft_render_xpm(t_data *d)
 {
-	d->spr.w_img = mlx_xpm_file_to_image(d->mlx.mlx,"assets/textures/wall.xpm",
+	d->spr.w_img = mlx_xpm_file_to_image(d->mlx.mlx, 
+			"assets/textures/wall.xpm",
 			&d->spr.width, &d->spr.height);
-	d->spr.p_img = mlx_xpm_file_to_image(d->mlx.mlx,"assets/textures/player.xpm",
+	d->spr.p_img = mlx_xpm_file_to_image(d->mlx.mlx, 
+			"assets/textures/player.xpm",
 			&d->spr.width, &d->spr.height);
-	d->spr.c_img = mlx_xpm_file_to_image(d->mlx.mlx, "assets/textures/collectible.xpm",
+	d->spr.c_img = mlx_xpm_file_to_image(d->mlx.mlx, 
+			"assets/textures/collectible.xpm",
 			&d->spr.width, &d->spr.height);
-	d->spr.e_img = mlx_xpm_file_to_image(d->mlx.mlx, "assets/textures/exit.xpm",
+	d->spr.e_img = mlx_xpm_file_to_image(d->mlx.mlx, 
+			"assets/textures/exit.xpm",
 			&d->spr.width, &d->spr.height);
-	d->spr.f_img = mlx_xpm_file_to_image(d->mlx.mlx, "assets/textures/floor.xpm",
+	d->spr.f_img = mlx_xpm_file_to_image(d->mlx.mlx, 
+			"assets/textures/floor.xpm",
 			&d->spr.width, &d->spr.height);
-	if (!d->spr.w_img|| !d->spr.p_img || !d->spr.c_img
+	if (!d->spr.w_img || !d->spr.p_img || !d->spr.c_img
 		|| !d->spr.e_img || !d->spr.f_img)
 		ft_perror("Error\nmlx_xpm_file_to_image() failed", d);
 }

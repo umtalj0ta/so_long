@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_aux.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/29 13:28:26 by jgomes-v          #+#    #+#             */
+/*   Updated: 2023/08/29 13:29:33 by jgomes-v         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/window.h"
 #include "../so_long.h"
-
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -15,7 +26,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		*pdest++ = *psrc++;
 	return (dest);
 }
-
 
 char	*ft_strchr(const char *buffer, int to_find)
 {

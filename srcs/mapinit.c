@@ -1,19 +1,31 @@
-#include "../so_long.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mapinit.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/29 13:28:46 by jgomes-v          #+#    #+#             */
+/*   Updated: 2023/08/29 13:36:17 by jgomes-v         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/window.h"
+#include "../so_long.h"
 #include <fcntl.h>
 
 void	ft_map_init(t_data *data, char *path)
 {
-    data->map.fd = open(path, O_RDONLY);
-    if(data->map.fd == -1)
-        ft_perror("Error",data);
-    data->map.n_columns = count_columns(data->map.fd);
-    data->map.n_rows = count_rows(data->map.fd);
-    data->map.map = ft_create_map_array(data, path);
-    data->map.n_collectibles = 0;
-    data->map.n_exits = 0;
-    data->map.n_players = 0;
-    close (data->map.fd);       
+	data->map.fd = open(path, O_RDONLY);
+	if (data->map.fd == -1)
+		ft_perror("Error", data);
+	data->map.n_columns = count_columns(data->map.fd);
+	data->map.n_rows = count_rows(data->map.fd);
+	data->map.map = ft_create_map_array(data, path);
+	data->map.n_collectibles = 0;
+	data->map.n_exits = 0;
+	data->map.n_players = 0;
+	close(data->map.fd);
 }
 
 int	count_columns(int fd)
@@ -47,9 +59,9 @@ int	count_rows(int fd)
 
 char	**ft_create_map_array(t_data *data, char *path)
 {
-	int				fd;
-	char			*line;
-	char			**map;
+	int		fd;
+	char	*line;
+	char	**map;
 
 	data->i = 0;
 	fd = open(path, O_RDONLY);
@@ -70,6 +82,6 @@ char	**ft_create_map_array(t_data *data, char *path)
 		free(line);
 		data->i++;
 	}
-	close (fd);
+	close(fd);
 	return (map);
 }

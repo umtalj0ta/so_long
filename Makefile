@@ -7,18 +7,15 @@ SRCS		=	srcs/main.c srcs/new_window.c srcs/close_and_destroy.c srcs/keypress.c s
 
 LIBFT		=	libft/libft.a
 CFLAGS		=	-Wall -Wextra -Werror -g 
-MLXFLAGS	=	-L ./mlx/ -lmlx -framework OpenGL -framework AppKit -lz
 RM			=	rm -f
 OBJS		=	$(SRCS:%.c=%.o)
-
-ifeq ($(shell uname), Linux)
-# se for linux usa estas flags
 MLXFLAGS	=	-L ./mlx_linux/ -lmlx -Ilmlx -lXext -lX11
-endif
+
 
 ifeq ($(shell uname ), Darwin)
 # se for mac usa library shared
 LIBFT	=	libft/libft.so
+MLXFLAGS	=	-L ./mlx/ -lmlx -framework OpenGL -framework AppKit -lz
 endif
 
 all:		$(NAME)
@@ -26,7 +23,7 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 			make -C libft
 			cp $(LIBFT) libft.so
-			make -C mlx
+			make -C mlx_linux
 			$(CC) $(SRCS) $(LIBFT) $(MLXFLAGS) $(CFLAGS) -o $(NAME)
 			
 

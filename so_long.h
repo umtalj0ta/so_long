@@ -18,12 +18,12 @@
 #  include "mlx_linux/mlx.h"
 
 # if defined(__APPLE__) && defined(__MACH__)
-#  include "mlx/mlx.h"
+#  include "./mlx_linux/mlx.h"
 # else
-#  include "../mlx_linux/mlx.h"
+#  include "./mlx_linux/mlx.h"
 # endif
 
-# include "./libft/libft.h"
+# include "./libft/libft/libft.h"
 
 # define X_EVENT_KEY_PRESS		2
 # define SIZE                   50

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_check.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jgomes-v <jgomes-v@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/29 13:28:42 by jgomes-v          #+#    #+#             */
+/*   Updated: 2023/08/29 13:29:58 by jgomes-v         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../so_long.h"
 #include "../include/window.h"
 
@@ -6,7 +18,6 @@ int		ft_check_characters(t_data *data);
 int		ft_check_retangular(t_data *data);
 int		ft_check_walls(t_data *data);
 int		ft_check_path(t_data *data);
-
 
 void	ft_map_check(t_data *data)
 {
@@ -82,7 +93,7 @@ int	ft_check_walls(t_data *d)
 	}
 	return (1);
 }
- 
+
 int	ft_check_path(t_data *d)
 {
 	int		e;
